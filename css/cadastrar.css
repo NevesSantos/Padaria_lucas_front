@@ -1,0 +1,17 @@
+form{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+input{
+    margin: 10px;
+}
+
+.btn{
+    width: 100px;
+}
+
+.hidden{
+    display: none;
+}

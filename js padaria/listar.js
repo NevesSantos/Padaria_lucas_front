@@ -1,5 +1,5 @@
 function getProdutos() {
-    fetch("http://localhost:8080/listar")
+    fetch("http://localhost:8080/")
         .then(retorno => retorno.json())
         .then(dados => listaProdutos(dados));
 }
