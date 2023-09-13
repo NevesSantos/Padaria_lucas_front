@@ -7,7 +7,7 @@ function selecionar(){
             inputId.value = linha.querySelector('.col-id').innerText;
             inputNome.value = linha.querySelector('.col-nome').innerText;
             inputImg.value = linha.querySelector('.col-img').innerText;
-            inputDesc.value = linha.querySelector('.col-desc').innerText;
+            inputDesc.value = linha.querySelector('.col-descricao').innerText;
             inputPreco.value = linha.querySelector('.col-preco').innerText;
 
             btnHidden();

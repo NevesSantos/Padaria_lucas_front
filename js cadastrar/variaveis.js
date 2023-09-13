@@ -1,7 +1,7 @@
 let inputId = document.getElementById("id");
 let inputNome = document.getElementById("nome");
 let inputImg = document.getElementById("img");
-let inputDesc = document.getElementById("desc");
+let inputDesc = document.getElementById("descricao");
 let inputPreco = document.getElementById("preco");
 
 let btnCadastrar = document.getElementById("cadastrar");

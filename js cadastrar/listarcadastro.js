@@ -28,7 +28,7 @@ fetch(local, {
             colImg.classList.add("col-img");
             colImg.innerText = p.img;
             
-            colDesc.classList.add("col-desc");
+            colDesc.classList.add("col-descricao");
             colDesc.innerText = p.descricao;
             
             colPreco.classList.add("col-preco");
