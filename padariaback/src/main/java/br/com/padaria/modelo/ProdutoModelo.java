@@ -1,4 +1,4 @@
-package br.com.api.produtos_padaria.modelo;
+package br.com.padaria.modelo;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

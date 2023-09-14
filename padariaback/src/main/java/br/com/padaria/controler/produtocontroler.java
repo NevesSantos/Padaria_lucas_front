@@ -1,4 +1,4 @@
-package br.com.api.produtos_padaria.controler;
+package br.com.padaria.controler;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.api.produtos_padaria.modelo.ProdutoModelo;
-import br.com.api.produtos_padaria.repositorio.ProdutoRepositorio;
+import br.com.padaria.modelo.ProdutoModelo;
+import br.com.padaria.repositorio.ProdutoRepositorio;
+
+
 
 @RestController
 @CrossOrigin(origins = "*")

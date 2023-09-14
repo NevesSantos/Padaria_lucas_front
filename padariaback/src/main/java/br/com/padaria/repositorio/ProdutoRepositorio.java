@@ -1,8 +1,12 @@
-package br.com.api.produtos_padaria.repositorio;
+package br.com.padaria.repositorio;
 
 import org.springframework.data.repository.CrudRepository;
 
-import br.com.api.produtos_padaria.modelo.ProdutoModelo;
+import br.com.padaria.modelo.ProdutoModelo;
+
+
+
+
 
 public interface ProdutoRepositorio extends CrudRepository<ProdutoModelo, Integer>{
     
