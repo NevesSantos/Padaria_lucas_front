@@ -2,7 +2,7 @@ btnRemover.addEventListener('click', function() {
     remover();
     setTimeout(() => {
         location.reload();
-    }, 70);
+    }, 10);
 });
 
 function remover(){

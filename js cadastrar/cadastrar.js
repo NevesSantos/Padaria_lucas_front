@@ -3,7 +3,7 @@ btnCadastrar.addEventListener('click', function() {
         cadastrar();
         setTimeout(() => {
             location.reload();
-        }, 70);
+        }, 10);
     };
 });
 
