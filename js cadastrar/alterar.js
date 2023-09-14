@@ -3,7 +3,7 @@ btnAlterar.addEventListener('click', function () {
         alterar();
         setTimeout(() => {
             location.reload();
-        }, 10);
+        }, 40);
 
     };
 });
