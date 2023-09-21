@@ -1,9 +1,11 @@
 package br.com.padaria.modelo;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -15,8 +17,12 @@ public class ProdutoModelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+    
+    @Lob
+    @Column(name = "img_produto", columnDefinition = "LONGBLOB")
+    
+    private byte[] img_produto;
     private String nome;
-    private String img;
     private String descricao;
-    private String preco;
+    private Double preco;
 }

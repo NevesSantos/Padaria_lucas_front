@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import br.com.padaria.modelo.ProdutoModelo;
 import br.com.padaria.repositorio.ProdutoRepositorio;
@@ -30,13 +32,24 @@ public class produtocontroler {
     }
 
     @PostMapping
-    public ResponseEntity<?> cadastrar(@RequestBody ProdutoModelo produtoModelo){
-        return new ResponseEntity<ProdutoModelo>(produtorepositorio.save(produtoModelo), HttpStatus.CREATED);
-    }
+    public ResponseEntity<ProdutoModelo> cadastrar(@RequestParam("img_produto") MultipartFile img_produto,
+    @RequestParam("descricao") String descricao, @RequestParam("preco") Double preco)
+     {
+        try{
+            byte[] imgBytes = img_produto.getBytes();
+            ProdutoModelo modelo = new ProdutoModelo();
+            modelo.setDescricao(descricao);
+            modelo.setImg_produto(imgBytes);
+            modelo.setPreco(preco);
+            return new ResponseEntity<ProdutoModelo>(produtorepositorio.save(modelo), HttpStatus.CREATED);
+        }catch (Exception e){
+            return null;
+        }
+     }  
     
     @PutMapping
-    public ResponseEntity<?> alterar(@RequestBody ProdutoModelo produtoModelo){
-        return new ResponseEntity<ProdutoModelo>(produtorepositorio.save(produtoModelo), HttpStatus.ACCEPTED);
+    public ResponseEntity<ProdutoModelo> alterar(@RequestBody ProdutoModelo produtoModelo){
+        return new ResponseEntity<ProdutoModelo>(produtorepositorio.save(produtoModelo), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/{id}")
