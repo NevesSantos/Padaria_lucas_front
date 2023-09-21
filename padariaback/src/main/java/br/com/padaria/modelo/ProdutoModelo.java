@@ -17,8 +17,9 @@ public class ProdutoModelo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    
-    private String img;
+    @Lob
+    @Column(columnDefinition = "LONGBLOB")
+    private byte[] img;
     private String nome;
     private String descricao;
     private Double preco;

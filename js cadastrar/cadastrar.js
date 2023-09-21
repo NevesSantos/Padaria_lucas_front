@@ -1,23 +1,22 @@
-btnCadastrar.addEventListener('click', function() {
-    if (!fica_em_alerta()){
-        cadastrar();
-        setTimeout(() => {
-            location.reload();
-        }, 40);
-    };
-});
+document.querySelector('form').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-function cadastrar(){
+    var dadosDoFormulario = new FormData(this);
+    console.log(this);
+
     fetch(local, {
-        headers: {
-            'Content-Type': 'application/json'
-        },
         method: 'POST',
-        body: JSON.stringify({
-            'nome': inputNome.value,
-            'img': inputImg.value,
-            'descricao': inputDesc.value,
-            'preco': inputPreco.value
-        })
+        body: dadosDoFormulario
+    
     })
-}
+    .then(resposta => resposta.json())
+    .then(produto => inserirProduto(produto))
+    .catch(error => {
+        console.error("Ocorreu um erro:", error);
+    });
+
+
+
+})
+
+
