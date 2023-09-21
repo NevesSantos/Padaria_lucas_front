@@ -32,21 +32,10 @@ public class produtocontroler {
     }
 
     @PostMapping
-    public ResponseEntity<ProdutoModelo> cadastrar(@RequestParam("img_produto") MultipartFile img_produto,
-    @RequestParam("descricao") String descricao, @RequestParam("preco") Double preco)
-     {
-        try{
-            byte[] imgBytes = img_produto.getBytes();
-            ProdutoModelo modelo = new ProdutoModelo();
-            modelo.setDescricao(descricao);
-            modelo.setImg_produto(imgBytes);
-            modelo.setPreco(preco);
-            return new ResponseEntity<ProdutoModelo>(produtorepositorio.save(modelo), HttpStatus.CREATED);
-        }catch (Exception e){
-            return null;
-        }
-     }  
-    
+    public ResponseEntity<ProdutoModelo> cadastrar(@RequestBody ProdutoModelo produtoModelo) {
+        return new ResponseEntity<ProdutoModelo>(produtorepositorio.save(produtoModelo), HttpStatus.CREATED);
+    }
+
     @PutMapping
     public ResponseEntity<ProdutoModelo> alterar(@RequestBody ProdutoModelo produtoModelo){
         return new ResponseEntity<ProdutoModelo>(produtorepositorio.save(produtoModelo), HttpStatus.CREATED);
