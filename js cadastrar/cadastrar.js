@@ -1,6 +1,6 @@
 document.querySelector('form').addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     var dadosDoFormulario = new FormData(this);
     console.log(this);
 
